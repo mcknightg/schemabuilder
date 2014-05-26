@@ -1,0 +1,27 @@
+<template name="position">
+
+    <div id="{{_id}}" style="position:absolute;left:{{left}};top:{{top}};width:220px" class="modal">
+        <div class="modal-header">
+            <a class="close" data-dismiss="modal">×</a>
+            {{#if editing_tablename}}
+            <input class="input-medium tablename" type="text" name="tablename" value="{{name}}" id="tablename">
+            {{else}}
+            <h3 class="tablename"><i class="icon-large icon-tasks exportjson"></i>&nbsp;{{name}}</h3>
+            {{/if}}
+        </div>
+        <div class="modal-body">
+            <span class="label label-success addfield">Fields</span>
+            <ul class="nav nav-pills nav-stacked">
+                {{#each dbfields}}
+                {{#if editing_field}}
+                {{>editfield}}
+                {{else}}
+                {{>dbfield}}
+                {{/if}}
+                {{/each}}
+            </ul>
+
+        </div>
+    </div>
+
+</template>

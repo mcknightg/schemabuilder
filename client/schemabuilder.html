@@ -1,0 +1,31 @@
+<head>
+  <title>Schema Planner</title>
+</head>
+
+<body>
+ {{>main}}
+</body>
+
+<template name="main">
+	<div class="navbar navbar-static-top">
+	    <div class="navbar-inner">
+	        <a class="brand" href="#">Schema Planner</a>
+	        <ul class="nav">
+	            <li class="active"><a href="/schema">Schema</a></li>
+	        </ul>
+	    </div>
+	</div>
+	
+	<div class="container-fluid">
+		<div class="row-fluid">
+			
+			<div id="schema" class="span10 schema">
+				{{#each positions}}
+				{{>position}}
+				{{/each}}
+			</div>
+			
+		</div>
+		
+	 </div>
+</template>

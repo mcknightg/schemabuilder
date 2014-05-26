@@ -1,0 +1,18 @@
+<template name="dbfield">
+	<li><div class="efield" id="{{_id}}"><i class="icon icon-lock "></i>&nbsp;{{name}}:<span class="muted">{{fieldtype}}</span></div></li>		
+</template>
+
+<template name="editfield">
+	<li><label for="editfieldname"></label><input class="input-medium editfieldname" type="text" name="editfieldname" value="{{name}}" id="editfieldname"></li>
+    <label for="fieldtype"></label><select class="input-medium fieldtype" name="fieldtype" id="fieldtype">
+			<option value="">None</option>
+			<option value="Text">Text</option>
+			<option value="Integer">Integer</option>
+			<option value="Date">Date</option>
+			<option value="PK">Primary Key</option>
+			{{#each positions}}
+			<option value="{{name}}">{{name}}</option>
+			{{/each}}
+			<option style="color:red" value="remove">---Remove---</option>
+		</select>
+</template>
